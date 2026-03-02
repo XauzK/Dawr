@@ -11,14 +11,15 @@
 <body>
 
 <nav id="main-nav">
-  <a href="#" class="nav-logo">Second Hand <span>Dawr</span></a>
+  <a href="index.html" class="nav-logo">Second Hand <span>Dawr</span></a>
   <div class="nav-search">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--muted);flex-shrink:0"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
     <input type="text" id="search-input" placeholder="Search items...">
   </div>
   <div class="nav-links">
-    <a id="nav-browse" class="nav-link">Browse</a>
+    <a id="nav-browse" class="nav-link" style="cursor:pointer;">Browse</a>
     <a href="#how-it-works" class="nav-link">How It Works</a>
+    <a href="about.html" class="nav-link">About Us</a>
   </div>
   <div class="nav-actions">
     <button class="btn btn-outline btn-sm" id="sell-btn">
@@ -60,11 +61,12 @@
 <div class="mobile-menu" id="mobile-menu">
   <div class="mobile-menu-panel">
     <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem">
-      <span class="nav-logo" style="font-size:1.2rem">Second Hand <span>Dawr</span></span>
+      <a href="index.html" class="nav-logo" style="font-size:1.2rem; text-decoration:none;">Second Hand <span>Dawr</span></a>
       <button class="modal-close" id="mobile-menu-close">✕</button>
     </div>
-    <a class="nav-link" id="mobile-nav-browse" onclick="closeMobileMenu()">Browse</a>
+    <a class="nav-link" id="mobile-nav-browse" onclick="closeMobileMenu()" style="cursor:pointer;">Browse</a>
     <a href="#how-it-works" class="nav-link" onclick="closeMobileMenu()">How It Works</a>
+    <a href="about.html" class="nav-link" onclick="closeMobileMenu()">About Us</a>
     <div style="margin-top:0.5rem">
       <button class="btn btn-outline" style="width:100%;margin-bottom:0.5rem" id="mobile-sell-btn">Sell an Item</button>
     </div>
@@ -111,10 +113,8 @@
       <h1 class="section-title">Shopping Cart</h1>
       <button class="btn btn-ghost" id="back-to-shop">← Continue Shopping</button>
     </div>
-    
     <div style="background:var(--card-bg); border:1px solid var(--border); border-radius:12px; padding:1.5rem;">
       <div id="amazon-cart-items"></div>
-      
       <div id="amazon-cart-footer" style="display:none; border-top:2px solid var(--border); margin-top:1.5rem; padding-top:1.5rem;">
         <div class="cart-total" style="font-size:1.4rem;">
           <span>Subtotal</span>
@@ -131,137 +131,103 @@
     <div class="hiw-inner">
       <div class="section-label">How It Works</div>
       <h2>Simple, Safe &amp; Trusted</h2>
-
       <div class="hiw-lang-tabs">
         <button type="button" class="hiw-lang-btn active" onclick="hiwLang('en', this)">English</button>
         <button type="button" class="hiw-lang-btn" onclick="hiwLang('mz', this)">Mizo</button>
       </div>
-
       <div class="hiw-content" id="hiw-en">
         <div class="hiw-cols">
           <div class="hiw-col">
-            <div class="hiw-col-header">
-              <span class="hiw-col-icon">🛍️</span>
-              <h3>For Buyers</h3>
-            </div>
+            <div class="hiw-col-header"><span class="hiw-col-icon">🛍️</span><h3>For Buyers</h3></div>
             <div class="hiw-steps">
-              <div class="hiw-step">
-                <div class="hiw-step-num">1</div>
-                <div>
-                  <div class="hiw-step-title">Sign Up &amp; Shop</div>
-                  <div class="hiw-step-desc">Create an account, log in, and browse our second-hand items.</div>
-                </div>
-              </div>
-              <div class="hiw-step">
-                <div class="hiw-step-num">2</div>
-                <div>
-                  <div class="hiw-step-title">Buyer Protection</div>
-                  <div class="hiw-step-desc">Your money is safe. Payments are only released to the seller after you receive the item and confirm your satisfaction, or if no complaints are raised within 48 hours.</div>
-                </div>
-              </div>
-              <div class="hiw-step">
-                <div class="hiw-step-num">3</div>
-                <div>
-                  <div class="hiw-step-title">48-Hour Easy Returns</div>
-                  <div class="hiw-step-desc">Not happy? You can return the item within 48 hours of delivery, no questions asked.<br><span class="hiw-note">Note: Returns are not accepted for physical damage caused after delivery.</span></div>
-                </div>
-              </div>
+              <div class="hiw-step"><div class="hiw-step-num">1</div><div><div class="hiw-step-title">Sign Up &amp; Shop</div><div class="hiw-step-desc">Create an account, log in, and browse our second-hand items.</div></div></div>
+              <div class="hiw-step"><div class="hiw-step-num">2</div><div><div class="hiw-step-title">Buyer Protection</div><div class="hiw-step-desc">Your money is safe. Payments are only released to the seller after you receive the item and confirm your satisfaction, or if no complaints are raised within 48 hours.</div></div></div>
+              <div class="hiw-step"><div class="hiw-step-num">3</div><div><div class="hiw-step-title">48-Hour Easy Returns</div><div class="hiw-step-desc">Not happy? You can return the item within 48 hours of delivery, no questions asked.<br><span class="hiw-note">Note: Returns are not accepted for physical damage caused after delivery.</span></div></div></div>
             </div>
           </div>
           <div class="hiw-divider"></div>
           <div class="hiw-col">
-            <div class="hiw-col-header">
-              <span class="hiw-col-icon">🏷️</span>
-              <h3>For Sellers</h3>
-            </div>
+            <div class="hiw-col-header"><span class="hiw-col-icon">🏷️</span><h3>For Sellers</h3></div>
             <div class="hiw-steps">
-              <div class="hiw-step">
-                <div class="hiw-step-num">1</div>
-                <div>
-                  <div class="hiw-step-title">List Your Item</div>
-                  <div class="hiw-step-desc">Submit the details and photos of the item you want to sell. Once approved by our admin, your item goes live on the site.</div>
-                </div>
-              </div>
-              <div class="hiw-step">
-                <div class="hiw-step-num">2</div>
-                <div>
-                  <div class="hiw-step-title">Order &amp; Pick-up</div>
-                  <div class="hiw-step-desc">When a buyer places an order, our team will come to your location to pick up the item.</div>
-                </div>
-              </div>
-              <div class="hiw-step">
-                <div class="hiw-step-num">3</div>
-                <div>
-                  <div class="hiw-step-title">Inspection &amp; Delivery</div>
-                  <div class="hiw-step-desc">During pick-up, our experts will quickly verify the item's condition. If everything matches your description, we handle the delivery straight to the buyer.</div>
-                </div>
-              </div>
+              <div class="hiw-step"><div class="hiw-step-num">1</div><div><div class="hiw-step-title">List Your Item</div><div class="hiw-step-desc">Submit the details and photos of the item you want to sell. Once approved by our admin, your item goes live on the site.</div></div></div>
+              <div class="hiw-step"><div class="hiw-step-num">2</div><div><div class="hiw-step-title">Order &amp; Pick-up</div><div class="hiw-step-desc">When a buyer places an order, our team will come to your location to pick up the item.</div></div></div>
+              <div class="hiw-step"><div class="hiw-step-num">3</div><div><div class="hiw-step-title">Inspection &amp; Delivery</div><div class="hiw-step-desc">During pick-up, our experts will quickly verify the item's condition. If everything matches your description, we handle the delivery straight to the buyer.</div></div></div>
             </div>
           </div>
         </div>
       </div>
-
       <div class="hiw-content" id="hiw-mz" style="display:none">
         <div class="hiw-cols">
           <div class="hiw-col">
-            <div class="hiw-col-header">
-              <span class="hiw-col-icon">🛍️</span>
-              <h3>Bungraw Lei Duh Te Tan</h3>
-            </div>
+            <div class="hiw-col-header"><span class="hiw-col-icon">🛍️</span><h3>Bungraw Lei Duh Te Tan</h3></div>
             <div class="hiw-steps">
-              <div class="hiw-step">
-                <div class="hiw-step-num">1</div>
-                <div>
-                  <div class="hiw-step-title">Account Siam</div>
-                  <div class="hiw-step-desc">Account siam la, log-in in him takin bungraw awm te thlang rawh.</div>
-                </div>
-              </div>
-              <div class="hiw-step">
-                <div class="hiw-step-num">2</div>
-                <div>
-                  <div class="hiw-step-title">Leina Him</div>
-                  <div class="hiw-step-desc">I pawisa him takin kan lo vawng tha ang. Bungrua i dawn atanga darkar 48 chhunga i lungawi thu i nemngheh emaw, sawiselna i neih loh chauhvin Seller hnenah pawisa a lut ang.</div>
-                </div>
-              </div>
-              <div class="hiw-step">
-                <div class="hiw-step-num">3</div>
-                <div>
-                  <div class="hiw-step-title">Darkar 48 Chhung Return Theih</div>
-                  <div class="hiw-step-desc">I bungraw dawn chu darkar 48 chhungin zawhna awm miah lovin i return thei ang.<br><span class="hiw-note">Hriattirna: I dawn hnua bungraw tichhe palh (physical damage) erawh return theih a ni lo.</span></div>
-                </div>
-              </div>
+              <div class="hiw-step"><div class="hiw-step-num">1</div><div><div class="hiw-step-title">Account Siam</div><div class="hiw-step-desc">Account siam la, log-in in him takin bungraw awm te thlang rawh.</div></div></div>
+              <div class="hiw-step"><div class="hiw-step-num">2</div><div><div class="hiw-step-title">Leina Him</div><div class="hiw-step-desc">I pawisa him takin kan lo vawng tha ang. Bungrua i dawn atanga darkar 48 chhunga i lungawi thu i nemngheh emaw, sawiselna i neih loh chauhvin Seller hnenah pawisa a lut ang.</div></div></div>
+              <div class="hiw-step"><div class="hiw-step-num">3</div><div><div class="hiw-step-title">Darkar 48 Chhung Return Theih</div><div class="hiw-step-desc">I bungraw dawn chu darkar 48 chhungin zawhna awm miah lovin i return thei ang.<br><span class="hiw-note">Hriattirna: I dawn hnua bungraw tichhe palh (physical damage) erawh return theih a ni lo.</span></div></div></div>
             </div>
           </div>
           <div class="hiw-divider"></div>
           <div class="hiw-col">
-            <div class="hiw-col-header">
-              <span class="hiw-col-icon">🏷️</span>
-              <h3>Bungraw Hralh Duh Te Tan</h3>
-            </div>
+            <div class="hiw-col-header"><span class="hiw-col-icon">🏷️</span><h3>Bungraw Hralh Duh Te Tan</h3></div>
             <div class="hiw-steps">
-              <div class="hiw-step">
-                <div class="hiw-step-num">1</div>
-                <div>
-                  <div class="hiw-step-title">Item List</div>
-                  <div class="hiw-step-desc">I bungraw hralh duh thlalak leh a dinhmun (condition) chiang takin list la, Admin in a approve veleh website-ah a lang ang.</div>
-                </div>
-              </div>
-              <div class="hiw-step">
-                <div class="hiw-step-num">2</div>
-                <div>
-                  <div class="hiw-step-title">Order &amp; Pick-up</div>
-                  <div class="hiw-step-desc">I bungrua order a nih veleh, i awmna atangin kan rawn pick up ang.</div>
-                </div>
-              </div>
-              <div class="hiw-step">
-                <div class="hiw-step-num">3</div>
-                <div>
-                  <div class="hiw-step-title">Enchianna &amp; Delivery</div>
-                  <div class="hiw-step-desc">Kan rawn pick-up rualin kan expert ten a condition i ziah dan nen a inmil em tih an lo endik anga, harsatna a awm loh chuan a leitu hnenah him takin kan deliver nghal ang.</div>
-                </div>
-              </div>
+              <div class="hiw-step"><div class="hiw-step-num">1</div><div><div class="hiw-step-title">Item List</div><div class="hiw-step-desc">I bungraw hralh duh thlalak leh a dinhmun (condition) chiang takin list la, Admin in a approve veleh website-ah a lang ang.</div></div></div>
+              <div class="hiw-step"><div class="hiw-step-num">2</div><div><div class="hiw-step-title">Order &amp; Pick-up</div><div class="hiw-step-desc">I bungrua order a nih veleh, i awmna atangin kan rawn pick up ang.</div></div></div>
+              <div class="hiw-step"><div class="hiw-step-num">3</div><div><div class="hiw-step-title">Enchianna &amp; Delivery</div><div class="hiw-step-desc">Kan rawn pick-up rualin kan expert ten a condition i ziah dan nen a inmil em tih an lo endik anga, harsatna a awm loh chuan a leitu hnenah him takin kan deliver nghal ang.</div></div></div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq-section" style="padding: 4rem 2rem; max-width: 1100px; margin: 0 auto;">
+    <div class="section-hdr" style="justify-content: center; text-align: center; margin-bottom: 3rem;">
+      <div>
+        <div class="section-label">FAQ</div>
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--dark);">Zawhna Tlanglawn Te</h2>
+      </div>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-column">
+        <div class="faq-col-header"><span class="faq-col-icon">🛍️</span><h3>Bungraw Lei Duh Te Tan (Buyers)</h3></div>
+        <div class="faq-accordion">
+          <details class="faq-item">
+            <summary class="faq-question">Thil ka leiin pawisa hi ka pe hmasa dawn nge a lo thlen hunah (COD)?</summary>
+            <div class="faq-answer">Order i siam rualin kan UPI ah i thil lei man hi i pek hmasak a ngai a ni. Mahse thlamuang takin awm rawh—i pawisa hi Seller hnenah kan pe nghal lova, kan lo vawng tha thin. I bungrua him taka i dawn a, i lungawi thlap hnuah chauh Seller hnenah hian pawisa hi kan transfer chhawng dawn a ni.</div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Delivery charge hi engzat nge ni thin a, tu in nge tum?</summary>
+            <div class="faq-answer">Delivery charge hi a leitu (Buyer) in a tum tur a ni a, fixed rate a awm lo. Bungraw rit leh len zawng, bakah a hlat zawng azirin a inthlak thin. I thil lei in-a a rawn thlen hunah, a rawn dahtu (delivery boy) hnenah a hmunah pek mai tur a ni e.</div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Ka thil dawn hi ka duh loh zawng lo ni ta se, a return theih em?</summary>
+            <div class="faq-answer">Aw, thei e. Bungrua i dawn atanga darkar 48 chhungin zawhna awm lovin i return thei ang a, i pawisa i hmu let (refund) vek ang. Mahse hriat tur pawimawh chu—i dawn hnua i tihchhiat palh emaw, a hmanna tur lova i hman vanga chhia (physical damage) a nih erawh chuan return theih a ni lo.</div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Ka thil lei tur hi a hmunah keimah ngeiin ka va pick-up thei em?</summary>
+            <div class="faq-answer">Tun dinhmunah chuan, inbumna a awm loh nan leh kalphung felfai zawk nan, kan delivery team ngeiin Seller te hnen atanga la in, i hnenah an rawn dah zel dawn a ni. Mahnia in-pick-up hi kan la kalpui rih lo.</div>
+          </details>
+        </div>
+      </div>
+      <div class="faq-column">
+        <div class="faq-col-header"><span class="faq-col-icon">🏷️</span><h3>Bungraw Hralh Duh Te Tan (Sellers)</h3></div>
+        <div class="faq-accordion">
+          <details class="faq-item">
+            <summary class="faq-question">Item list man a awm em? Commission in la em?</summary>
+            <div class="faq-answer">I bungraw hralh tur list (post) hi a thlawn vek a ni. Mahse, i bungrua him leh tluang taka hralh a nih chuan, a man i tuk atangin platform enkawlna atan <strong>5%</strong> chauh kan cut ang a, a bak <strong>95%</strong> zawng chu i account-ah kan transfer ang. I thil list hi a inhrallh lo a nih chuan engmah pawisa chawi a ngai lo.</div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Delivery tur hi keiman ka buaipui a ngai em?</summary>
+            <div class="faq-answer">Ngai lo ve. I bungrua kha  order a nih veleh kan delivery team in i awmna hmun atangin an rawn pick-up mai ang che. Delivery charge pawh Buyer-in a tum vek dawn avangin buaina tur i nei lo.</div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Ka thil hralhna pawisa hi engtikah nge ka hmuh ang?</summary>
+            <div class="faq-answer">Buyer-in i bungrua a dawn atangin darkar 48 chhung return theihna hun (Return Window) a awm a. Chu hun chu harsatna awm lova a liam hnuah, i bank account emaw UPI ah i pawisa tur chu kan rawn thun nghal ang.</div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Bungraw list dawnin tehna emaw dan a awm em?</summary>
+            <div class="faq-answer">Bungraw chhia leh hman tlak loh kan pawm lo. I bungrua kha a nung tha em tih leh a chhiatna lai (defects) a awm pawhin thup lova i ziah lan ngei a ngai. Kan rawn pick-up dawnin kan expert ten an rawn endik leh thlap dawn a, i thu ziah nen a inmil loh chuan order hi cancel theih a ni.</div>
+          </details>
         </div>
       </div>
     </div>
@@ -271,7 +237,7 @@
 <footer>
   <div class="footer-grid">
     <div>
-      <div class="footer-logo">Second Hand <span>Dawr</span></div>
+      <a href="index.html" class="footer-logo" style="text-decoration:none; display:inline-block;">Second Hand <span>Dawr</span></a>
       <p>Mizoram's trusted marketplace for pre-loved goods. Connecting buyers and sellers across all districts.</p>
     </div>
     <div>
@@ -279,6 +245,7 @@
       <ul>
         <li><a style="cursor:pointer;" onclick="document.getElementById('nav-browse').click()">Browse Items</a></li>
         <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="about.html">About Us</a></li>
         <li><a href="#" id="footer-sell-link">Sell an Item</a></li>
       </ul>
     </div>
@@ -306,14 +273,8 @@
       <h2 class="modal-title">Welcome Back</h2>
       <button class="modal-close" data-close="signin-modal">✕</button>
     </div>
-    <div class="form-group">
-      <label>Email Address</label>
-      <input type="email" id="signin-email" placeholder="your@email.com">
-    </div>
-    <div class="form-group">
-      <label>Password</label>
-      <input type="password" id="signin-password" placeholder="••••••">
-    </div>
+    <div class="form-group"><label>Email Address</label><input type="email" id="signin-email" placeholder="your@email.com"></div>
+    <div class="form-group"><label>Password</label><input type="password" id="signin-password" placeholder="••••••"></div>
     <div id="signin-error" style="color:var(--terracotta);font-size:0.82rem;margin-bottom:0.75rem;display:none"></div>
     <button class="btn btn-primary" style="width:100%" id="signin-submit">Sign In</button>
     <div class="auth-toggle">Don't have an account? <a id="go-signup">Create one</a></div>
@@ -327,42 +288,17 @@
       <button class="modal-close" data-close="signup-modal">✕</button>
     </div>
     <div class="form-row">
-      <div class="form-group">
-        <label>First Name *</label>
-        <input type="text" id="su-firstName" placeholder="Lalruata">
-      </div>
-      <div class="form-group">
-        <label>Last Name *</label>
-        <input type="text" id="su-lastName" placeholder="Chhangte">
-      </div>
+      <div class="form-group"><label>First Name *</label><input type="text" id="su-firstName" placeholder="Lalruata"></div>
+      <div class="form-group"><label>Last Name *</label><input type="text" id="su-lastName" placeholder="Chhangte"></div>
     </div>
-    <div class="form-group">
-      <label>Email Address *</label>
-      <input type="email" id="su-email" placeholder="your@email.com">
-    </div>
-    <div class="form-group">
-      <label>Mobile Number *</label>
-      <input type="tel" id="su-phone" placeholder="9876543210">
-      <div class="form-note">10-digit Indian mobile number</div>
-    </div>
-    <div class="form-group">
-      <label>Password *</label>
-      <input type="password" id="su-password" placeholder="Min. 6 characters">
-    </div>
+    <div class="form-group"><label>Email Address *</label><input type="email" id="su-email" placeholder="your@email.com"></div>
+    <div class="form-group"><label>Mobile Number *</label><input type="tel" id="su-phone" placeholder="9876543210"><div class="form-note">10-digit Indian mobile number</div></div>
+    <div class="form-group"><label>Password *</label><input type="password" id="su-password" placeholder="Min. 6 characters"></div>
     <div class="form-section-title">Delivery Address</div>
-    <div class="form-group">
-      <label>House / Flat / Street *</label>
-      <input type="text" id="su-line1" placeholder="House No. 12, Mission Veng">
-    </div>
-    <div class="form-group">
-      <label>Locality / Area</label>
-      <input type="text" id="su-line2" placeholder="Near Fire Station (optional)">
-    </div>
+    <div class="form-group"><label>House / Flat / Street *</label><input type="text" id="su-line1" placeholder="House No. 12, Mission Veng"></div>
+    <div class="form-group"><label>Locality / Area</label><input type="text" id="su-line2" placeholder="Near Fire Station (optional)"></div>
     <div class="form-row">
-      <div class="form-group">
-        <label>City *</label>
-        <input type="text" id="su-city" placeholder="Aizawl">
-      </div>
+      <div class="form-group"><label>City *</label><input type="text" id="su-city" placeholder="Aizawl"></div>
       <div class="form-group">
         <label>District *</label>
         <select id="su-district">
@@ -375,14 +311,8 @@
       </div>
     </div>
     <div class="form-row">
-      <div class="form-group">
-        <label>State</label>
-        <input type="text" value="Mizoram" readonly style="background:var(--cream);cursor:default">
-      </div>
-      <div class="form-group">
-        <label>Pincode *</label>
-        <input type="text" id="su-pincode" placeholder="796001" maxlength="6">
-      </div>
+      <div class="form-group"><label>State</label><input type="text" value="Mizoram" readonly style="background:var(--cream);cursor:default"></div>
+      <div class="form-group"><label>Pincode *</label><input type="text" id="su-pincode" placeholder="796001" maxlength="6"></div>
     </div>
     <div id="signup-error" style="color:var(--terracotta);font-size:0.82rem;margin-bottom:0.75rem;display:none"></div>
     <button class="btn btn-primary" style="width:100%" id="signup-submit">Create Account</button>
@@ -396,15 +326,9 @@
       <h2 class="modal-title">List an Item</h2>
       <button class="modal-close" data-close="sell-modal">✕</button>
     </div>
-    <div class="form-group">
-      <label>Item Title *</label>
-      <input type="text" id="sell-title" placeholder="e.g. Samsung Galaxy A32, Wooden Study Table">
-    </div>
+    <div class="form-group"><label>Item Title *</label><input type="text" id="sell-title" placeholder="e.g. Samsung Galaxy A32, Wooden Study Table"></div>
     <div class="form-row">
-      <div class="form-group">
-        <label>Price (₹) *</label>
-        <input type="number" id="sell-price" placeholder="1500" min="1">
-      </div>
+      <div class="form-group"><label>Price (₹) *</label><input type="number" id="sell-price" placeholder="1500" min="1"></div>
       <div class="form-group">
         <label>Category *</label>
         <select id="sell-category">
@@ -422,14 +346,8 @@
         <option>Like New</option><option>Excellent</option><option>Good</option><option>Fair</option>
       </select>
     </div>
-    <div class="form-group">
-      <label>Description</label>
-      <textarea id="sell-description" placeholder="Describe the item — age, any defects, reason for selling..."></textarea>
-    </div>
-    <div class="form-group">
-      <label>Contact Number</label>
-      <input type="tel" id="sell-contact" placeholder="Your phone number">
-    </div>
+    <div class="form-group"><label>Description</label><textarea id="sell-description" placeholder="Describe the item — age, any defects, reason for selling..."></textarea></div>
+    <div class="form-group"><label>Contact Number</label><input type="tel" id="sell-contact" placeholder="Your phone number"></div>
     <div class="form-section-title">Photo</div>
     <div class="form-group">
       <div class="image-upload-area" id="upload-area" onclick="document.getElementById('sell-image-input').click()">
@@ -440,79 +358,31 @@
       <input type="file" id="sell-image-input" accept="image/*" style="display:none">
       <img id="sell-image-preview" class="image-preview" alt="Preview">
     </div>
-    <div class="form-group">
-      <label>Or choose an emoji fallback</label>
-      <div class="emoji-picker" id="emoji-picker"></div>
-    </div>
-
+    <div class="form-group"><label>Or choose an emoji fallback</label><div class="emoji-picker" id="emoji-picker"></div></div>
     <div class="form-section-title">Terms & Conditions</div>
     <div class="tnc-box">
       <h4>BUNGRAW HRALHTUTE HRIATTUR (Seller T&C)</h4>
       <p><strong>1. Platform Fee (Commission):</strong> I bungrua hi him tak leh tluang taka hralh a nih hunah, a man i tuk atangin <strong>5%</strong> hi platform enkawlna (commission) atan kan cut ang a, a bak <strong>95%</strong> zawng chu i bank account emaw UPI ah kan rawn thun ang.</p>
-      <p><strong>2. Delivery & Pick-up Kalphung:</strong> I bungrua leitu an awm veleh, kan team-in i awmna atangin kan rawn pick-up ang. Delivery fee hi Seller-in pek a ngai lo. Delivery fee hi chu bungraw len zawng leh rit zawng azirin a leitu (buyer) in a hmunah an lo pe ang.</p>
-      <p><strong>3. Bungraw Dinhmun:</strong> I thil hralh tur condition leh a chhiatna lai (a awm chuan) thup lovin dik takin i ziak tur a ni. Kan rawn pick-up dawnin kan rawn endik ang a, i thu ziah nen a inmil lo a nih chuan order hi cancel theih a ni.</p>
-      <p><strong>4. Return Policy & Payout:</strong> Bum hmang laka leitu te an him nan, leitu in bungrua a dawn atangin darkar 48 chhung return theihna hun pek an ni. Harsatna a awm lo a, darkar 48 a liam hnuah chauh i pawisa tur hi i hnenah kan rawn transfer chauh dawn a ni.</p>
+      <p><strong>2. Delivery & Pick-up Kalphung:</strong> I bungrua leitu an awm veleh, kan team-in i awmna atangin kan rawn pick-up ang. Delivery fee hi Seller-in pek a ngai lo.</p>
+      <p><strong>3. Bungraw Dinhmun:</strong> I thil hralh tur condition leh a chhiatna lai (a awm chuan) thup lovin dik takin i ziak tur a ni.</p>
+      <p><strong>4. Return Policy & Payout:</strong> Leitu in bungrua a dawn atangin darkar 48 chhung return theihna hun pek an ni. Harsatna a awm lo a, darkar 48 a liam hnuah chauh i pawisa tur hi i hnenah kan rawn transfer chauh dawn a ni.</p>
       <p><strong>5. Prohibited Items:</strong> Ralthuam, damdawi (drugs), ruihhlo, ramsa leh sorkar in a khap thil reng reng hralh emaw pho chhuah phal a ni lo.</p>
     </div>
     <div class="tnc-checkbox-wrap">
       <input type="checkbox" id="sell-tnc-checkbox">
       <label for="sell-tnc-checkbox">Heng dan leh kalphung te hi ka hrethiam in, ka pawm e.<br><span style="color:var(--muted); font-size:0.75rem;">(I accept the Terms and Conditions)</span></label>
     </div>
-
     <div id="sell-error" style="color:var(--terracotta);font-size:0.82rem;margin-bottom:0.75rem;display:none"></div>
     <button class="btn btn-primary" style="width:100%" id="sell-submit">Submit for Approval</button>
   </div>
 </div>
 
-<div class="modal-overlay" id="product-modal">
-  <div class="modal modal-lg">
-    <div class="modal-header">
-      <h2 class="modal-title">Item Details</h2>
-      <button class="modal-close" data-close="product-modal">✕</button>
-    </div>
-    <div id="product-modal-content"></div>
-  </div>
-</div>
+<div class="modal-overlay" id="product-modal"><div class="modal modal-lg"><div class="modal-header"><h2 class="modal-title">Item Details</h2><button class="modal-close" data-close="product-modal">✕</button></div><div id="product-modal-content"></div></div></div>
+<div class="modal-overlay" id="checkout-modal"><div class="modal modal-lg"><div class="modal-header"><h2 class="modal-title">Checkout</h2><button class="modal-close" data-close="checkout-modal">✕</button></div><div id="checkout-content"></div></div></div>
 
-<div class="modal-overlay" id="checkout-modal">
-  <div class="modal modal-lg">
-    <div class="modal-header">
-      <h2 class="modal-title">Checkout</h2>
-      <button class="modal-close" data-close="checkout-modal">✕</button>
-    </div>
-    <div id="checkout-content"></div>
-  </div>
-</div>
-
-<div class="panel-overlay" id="orders-panel">
-  <div class="panel">
-    <div class="panel-header">
-      <button class="modal-close" id="close-orders">✕</button>
-      <h3>My Orders</h3>
-    </div>
-    <div class="panel-body" id="orders-list"></div>
-  </div>
-</div>
-
-<div class="panel-overlay" id="listings-panel">
-  <div class="panel">
-    <div class="panel-header">
-      <button class="modal-close" id="close-listings">✕</button>
-      <h3>My Listings</h3>
-    </div>
-    <div class="panel-body" id="my-listings-list"></div>
-  </div>
-</div>
-
-<div class="panel-overlay" id="address-panel">
-  <div class="panel">
-    <div class="panel-header">
-      <button class="modal-close" id="close-address">✕</button>
-      <h3>Address Book</h3>
-    </div>
-    <div class="panel-body" id="address-book-content"></div>
-  </div>
-</div>
+<div class="panel-overlay" id="orders-panel"><div class="panel"><div class="panel-header"><button class="modal-close" id="close-orders">✕</button><h3>My Orders</h3></div><div class="panel-body" id="orders-list"></div></div></div>
+<div class="panel-overlay" id="listings-panel"><div class="panel"><div class="panel-header"><button class="modal-close" id="close-listings">✕</button><h3>My Listings</h3></div><div class="panel-body" id="my-listings-list"></div></div></div>
+<div class="panel-overlay" id="address-panel"><div class="panel"><div class="panel-header"><button class="modal-close" id="close-address">✕</button><h3>Address Book</h3></div><div class="panel-body" id="address-book-content"></div></div></div>
 
 <script type="module" src="app.js"></script>
 
