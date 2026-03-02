@@ -356,7 +356,6 @@
 </head>
 <body>
 
-<!-- ===== LOGIN SCREEN ===== -->
 <div id="login-screen">
   <div class="login-card">
     <div class="login-logo">Second Hand <span>Dawr</span></div>
@@ -367,7 +366,7 @@
     </div>
     <div class="form-group">
       <label>Password</label>
-      <input type="password" id="login-password" placeholder="••••••" id="login-password">
+      <input type="password" id="login-password" placeholder="••••••">
     </div>
     <div id="login-error" style="color:var(--terracotta);font-size:0.82rem;margin-bottom:0.75rem;display:none"></div>
     <button class="btn btn-primary" style="width:100%;padding:0.65rem;font-size:0.925rem" id="login-btn">Sign In</button>
@@ -375,7 +374,6 @@
   </div>
 </div>
 
-<!-- ===== SIDEBAR ===== -->
 <div class="sidebar-overlay" id="sidebar-overlay"></div>
 <div id="sidebar">
   <div class="sidebar-logo">
@@ -424,7 +422,6 @@
   </div>
 </div>
 
-<!-- ===== MAIN CONTENT ===== -->
 <div id="main-content">
   <div class="topbar">
     <div style="display:flex;align-items:center;gap:1rem">
@@ -439,7 +436,6 @@
     </div>
   </div>
 
-  <!-- ===== DASHBOARD ===== -->
   <div class="page active" id="page-dashboard">
     <div class="stats-grid" id="stats-grid">
       <div class="stat-card"><div class="stat-icon">📋</div><div class="stat-label">Pending Listings</div><div class="stat-value" id="stat-pending-listings">—</div><div class="stat-sub">Awaiting approval</div></div>
@@ -447,7 +443,6 @@
       <div class="stat-card"><div class="stat-icon">🛒</div><div class="stat-label">Pending Orders</div><div class="stat-value" id="stat-pending-orders">—</div><div class="stat-sub">Need confirmation</div></div>
       <div class="stat-card"><div class="stat-icon">👥</div><div class="stat-label">Total Users</div><div class="stat-value" id="stat-users">—</div><div class="stat-sub">Registered accounts</div></div>
     </div>
-    <!-- Recent Activity -->
     <div class="section-hdr">
       <h2>Recent Listings (Pending)</h2>
       <button class="btn btn-primary btn-sm" onclick="switchPage('listings')">View All →</button>
@@ -457,7 +452,6 @@
     </div>
   </div>
 
-  <!-- ===== LISTINGS ===== -->
   <div class="page" id="page-listings">
     <div class="section-hdr">
       <h2>All Listings</h2>
@@ -494,7 +488,6 @@
     </div>
   </div>
 
-  <!-- ===== ORDERS ===== -->
   <div class="page" id="page-orders">
     <div class="section-hdr"><h2>All Orders</h2></div>
     <div class="table-wrap">
@@ -516,7 +509,7 @@
       <div style="overflow-x:auto">
         <table>
           <thead><tr>
-            <th>Order ID</th><th>Buyer</th><th>Items</th><th>Total</th>
+            <th>Order ID</th><th>Buyer</th><th>Item(s) Ordered</th><th>Total</th>
             <th>Payment</th><th>Status</th><th>Date</th><th>Actions</th>
           </tr></thead>
           <tbody id="orders-tbody"></tbody>
@@ -526,7 +519,6 @@
     </div>
   </div>
 
-  <!-- ===== USERS ===== -->
   <div class="page" id="page-users">
     <div class="section-hdr"><h2>Registered Users</h2></div>
     <div class="table-wrap">
@@ -548,7 +540,6 @@
     </div>
   </div>
 
-  <!-- ===== AVAILABILITY ===== -->
   <div class="page" id="page-availability">
     <div class="section-hdr"><h2>Listing Availability</h2>
       <div style="font-size:0.82rem;color:var(--muted)">Toggle whether approved listings are visible to buyers</div>
@@ -572,7 +563,6 @@
   </div>
 </div>
 
-<!-- ===== LISTING DETAIL MODAL ===== -->
 <div class="modal-overlay" id="listing-modal">
   <div class="modal">
     <div class="modal-header">
@@ -583,7 +573,6 @@
   </div>
 </div>
 
-<!-- ===== ORDER DETAIL MODAL ===== -->
 <div class="modal-overlay" id="order-modal">
   <div class="modal">
     <div class="modal-header">
@@ -594,7 +583,6 @@
   </div>
 </div>
 
-<!-- ===== USER DETAIL MODAL ===== -->
 <div class="modal-overlay" id="user-modal">
   <div class="modal">
     <div class="modal-header">
@@ -605,7 +593,6 @@
   </div>
 </div>
 
-<!-- ===== CONFIRM DIALOG ===== -->
 <div class="confirm-overlay" id="confirm-overlay">
   <div class="confirm-box">
     <h3 id="confirm-title">Confirm Action</h3>
@@ -617,7 +604,6 @@
   </div>
 </div>
 
-<!-- ===== TOAST ===== -->
 <div id="toast-container"></div>
 
 <script type="module">
@@ -915,9 +901,14 @@ function renderOrdersTable() {
   if (!page.length) { tbody.innerHTML=`<tr><td colspan="8" class="table-empty">No orders found</td></tr>`; renderPagination('orders', filtered.length); return; }
   tbody.innerHTML = page.map(o => {
     return `<tr>
-      <td><span style="font-size:0.75rem;font-weight:700;color:var(--brown)">${o.id}</span></td>
+      <td><span style="font-size:0.75rem;font-weight:700;color:var(--brown)" title="${o.id}">${o.id.substring(0, 10)}...</span></td>
       <td><div>${o.userName||'—'}</div><div style="font-size:0.75rem;color:var(--muted)">${o.userPhone||''}</div></td>
-      <td>${(o.items||[]).length} item(s)</td>
+      <td>
+        <div style="font-weight:600; color:var(--dark); max-width: 220px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${(o.items||[]).map(i=>i.title).join(', ')}">
+          ${(o.items||[]).map(i=>i.title).join(', ')}
+        </div>
+        <div style="font-size:0.7rem; color:var(--muted)">${(o.items||[]).length} item(s)</div>
+      </td>
       <td><strong>${formatINR(o.totalAmount)}</strong></td>
       <td>${paymentBadge(o.paymentStatus)}</td>
       <td>${statusBadge(o.orderStatus)}</td>
